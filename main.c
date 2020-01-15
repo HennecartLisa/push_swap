@@ -6,7 +6,7 @@
 /*   By: lhenneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:05:21 by lhenneca          #+#    #+#             */
-/*   Updated: 2020/01/15 14:41:56 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:53:34 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,27 @@ int error(void)
 {
 	ft_putendl("Error");
 	return (1);
+}
+
+int		order(int *a, int len)
+{
+	int		i;
+	int		j;
+
+	i = len - 1;
+	while (i >= 0)
+	{
+		j = i - 1;
+		while (i >= 0 && i != j && a[j + 1] < a[j])
+		{
+			if (i == 0)
+				i = len;
+			i--;
+		}
+		if (i == j)
+			return (i);
+	}
+	return (-1);
 }
 
 int		main(int argc, char *argv[])

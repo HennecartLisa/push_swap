@@ -6,7 +6,7 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 15:14:25 by viforget          #+#    #+#             */
-/*   Updated: 2020/01/11 14:26:39 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:30:48 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,10 @@
 # include <stdarg.h>
 # include <limits.h>
 
-
-int		sa(int *a, int *b);
-int		sb(int *a, int *b);
-int		ss(int *a, int *b);
-int		pa(int *a, int *b);
-int		pb(int *a, int *b);
-int		ra(int *a, int *b);
-int		rb(int *a, int *b);
-int		rr(int *a, int *b);
-int		rra(int *a, int *b);
-int		rrb(int *a, int *b);
-int		rrr(int *a, int *b);
+int		len(int *tab);
+int		swap(int *tab, int len);
+int		push(int *a, int *b, int lena, int lenb);
+int		rot(int *a, int len);
+int		rot_rev(int *a, int len);
 
 #endif

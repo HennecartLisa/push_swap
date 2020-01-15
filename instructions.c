@@ -6,73 +6,68 @@
 /*   By: lhenneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:08:15 by lhenneca          #+#    #+#             */
-/*   Updated: 2020/01/11 14:15:19 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:27:17 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		sa(int *a, int *b)
+int		len(int *tab)
 {
+	int		i;
 
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
+}
+
+int		swap(int *tab, int len)
+{
+	int		temp;
+
+	if (len < 2)
+		return (-1);
+	temp = tab[len - 1];
+	tab[len - 1] = tab[len -2];
+	tab[len - 2] = temp;
 	return (0);
 }
 
-int		sb(int *a, int *b)
+int		push(int *a, int *b, int lena, int lenb)
 {
-
+	a[lena] = b[lenb - 1];
+	b[lenb - 1] = '\0';
 	return (0);
 }
 
-int		ss(int *a, int *b)
+int		rot(int *a, int len)
 {
+	int		i;
+	int		temp;
 
+	i = 0;
+	temp = a[i];
+	while (i < len - 2)
+	{
+		i++;
+		a[i] = a[i + 1];
+	}
+	a[i] = temp;
 	return (0);
 }
 
 
-int		pa(int *a, int *b)
+int		rot_rev(int *a, int len)
 {
+	int		i;
+	int		temp;
 
-	return (0);
-}
-
-int		pb(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		ra(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		rb(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		rr(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		rra(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		rrb(int *a, int *b)
-{
-
-	return (0);
-}
-
-int		rrr(int *a, int *b)
-{
-
+	i = len - 1;
+	temp = a[i];
+	while (i > 1)
+	{
+		i--;
+		a[i] = a[i - 1];
+	}
+	a[i] = temp;
 	return (0);
 }

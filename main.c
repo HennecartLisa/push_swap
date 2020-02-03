@@ -6,7 +6,7 @@
 /*   By: lhenneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:05:21 by lhenneca          #+#    #+#             */
-/*   Updated: 2020/01/15 14:53:34 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/02/03 17:11:42 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,13 @@ int		main(int argc, char *argv[])
 	a = ft_memalloc(argc * sizeof(int));
 	if (ft_read(argc, argv, a) == 1)
 		return (error());
-	a = ft_memalloc(argc * sizeof(int));
 	b = ft_memalloc(argc * sizeof(int));
-
+	b = tris_bulle(a, len(a));
+	while (*b)
+	{
+		ft_putnbr(*b);
+		ft_putendl("");
+		b++;
+	}
 	return (0);
 }

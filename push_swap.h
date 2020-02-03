@@ -6,7 +6,7 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 15:14:25 by viforget          #+#    #+#             */
-/*   Updated: 2020/01/15 14:30:48 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/02/03 17:11:43 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ int		push(int *a, int *b, int lena, int lenb);
 int		rot(int *a, int len);
 int		rot_rev(int *a, int len);
 
+int 	*tris_bulle(int *tab, int len);
 #endif

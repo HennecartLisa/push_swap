@@ -6,7 +6,7 @@
 /*   By: lhenneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:08:15 by lhenneca          #+#    #+#             */
-/*   Updated: 2020/01/15 14:27:17 by lhenneca         ###   ########.fr       */
+/*   Updated: 2020/02/03 15:57:23 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		swap(int *tab, int len)
 
 	if (len < 2)
 		return (-1);
-	temp = tab[len - 1];
-	tab[len - 1] = tab[len -2];
-	tab[len - 2] = temp;
+	temp = tab[len];
+	tab[len] = tab[len -1];
+	tab[len - 1] = temp;
 	return (0);
 }
 

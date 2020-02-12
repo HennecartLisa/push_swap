@@ -12,29 +12,29 @@
 
 #include "push_swap.h"
 
-int 	*tris_bulle(int *tab, int len)
+int 	tris_bulle(int *tab, int *arr, int len)
 {
 	int		i;
 	int		j;
 	int		temp;
-	int		*arr;
 
 	i = 0;
-	arr = malloc(len * sizeof(int));
-	temp = tab[i];
-	while (i <= len)
+	while (i < len)
 	{
 		j = i + 1;
-		while (j <= len)
-		{
-			if (tab[j] < temp)
-				temp = tab[j];
+		while (j < len)
+		{	
+			if (tab[j] < tab[i])
+			{
+				temp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = temp;
+			}
 			j++;
 		}
-		arr[i] = temp;
 		i++;
 	}
-	return (arr);
+	return (1);
 }
 
 char	*rra(int **tab, int len)

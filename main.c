@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+int		*ft_nbrcpy(int *dst, int *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
+}
+
 /*
  * 1 if digit
  * 0 if not
@@ -39,7 +52,7 @@ int		ft_isin(int *a, int n, int i)
 	return (0);
 }
 
-int		ft_read(int argc, char *argv[], int *a)
+int		ft_read(int argc, char *argv[], t_pile a)
 {
 	int		i;
 	int		error;
@@ -51,15 +64,9 @@ int		ft_read(int argc, char *argv[], int *a)
 	{
 		nb = ft_atoi(argv[i]);
 		if (ft_is_number(argv[i]))
-			ft_isin(a, nb, i ) ? (error = 1) : (a[i] = nb);
+			ft_isin(a.tab, nb, i ) ? (error = 1) : (a.tab[i - 1] = nb);
 		else
-			(error = 1);
-		
-		if (!error)
-		{
-			ft_putnbr(a[i]);
-			ft_putendl("");
-		}
+			error = 1;
 		i++;
 	}
 	if (error)
@@ -74,46 +81,31 @@ int error(void)
 	return (1);
 }
 
-int		order(int *a, int len)
-{
-	int		i;
-	int		j;
-
-	i = len - 1;
-	while (i >= 0)
-	{
-		j = i - 1;
-		while (i >= 0 && i != j && a[j + 1] < a[j])
-		{
-			if (i == 0)
-				i = len;
-			i--;
-		}
-		if (i == j)
-			return (i);
-	}
-	return (-1);
-}
-
 int		main(int argc, char *argv[])
 {
 	int		i;
-	int		*a;
-	int		*b;
+	t_pile	a;
+	t_pile	b;
 
 	i = 0;
 	if (argc < 2)
 		return (error());
-	a = ft_memalloc(argc * sizeof(int));
+	a.tab = ft_memalloc(argc * sizeof(int));
 	if (ft_read(argc, argv, a) == 1)
 		return (error());
-	b = ft_memalloc(argc * sizeof(int));
-	b = tris_bulle(a, len(a));
-	while (*b)
+	b.tab = ft_memalloc(argc * sizeof(int));
+	a.len = len(a.tab);
+	/*
+	b.tab = ft_nbrcpy(b.tab, a.tab, argc - 1);
+	ft_putendl("Tris a bulle ");
+	tris_bulle(a.tab, b.tab, a.len);
+	i = 0;
+	while (i < argc - 1)
 	{
-		ft_putnbr(*b);
-		ft_putendl("");
-		b++;
+		ft_putnbr(b.tab[i]);
+		ft_putendl(" ");
+		i++;
 	}
+	*/
 	return (0);
 }

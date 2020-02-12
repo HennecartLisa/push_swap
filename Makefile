@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_wap
+NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
+C_FILES = main.c checker.c instructions.c push_swap.c
 
 all: $(NAME) 
 
 $(NAME): getlibft
-	gcc $(FLAGS) main.c libft/libft.a -o $(NAME)
+	gcc $(FLAGS) $(C_FILES) libft/libft.a -o $(NAME)
 
 getlibft:
 	make -C libft

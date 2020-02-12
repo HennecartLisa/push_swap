@@ -28,13 +28,17 @@ typedef struct s_pile
 	int		max;
 	int		min;
 }				t_pile;
-
-int		len(int *tab);
+//instructions.c
 int		swap(int *tab, int len);
 int		push(int *a, int *b, int lena, int lenb);
 int		rot(int *a, int len);
 int		rot_rev(int *a, int len);
 
-int 	tris_bulle(int *tab, int *arr, int len);
+int		ft_is_number(char *n);
+int		ft_isin(int *a, int n, int i);
+int		ft_read(char *argv[], t_pile *a);
+int 	init_stack(t_pile *p, size_t len, char *argv[]);
+int 	error(void);
+//push_swap.c
 
 #endif

@@ -12,31 +12,6 @@
 
 #include "push_swap.h"
 
-int 	tris_bulle(int *tab, int *arr, int len)
-{
-	int		i;
-	int		j;
-	int		temp;
-
-	i = 0;
-	while (i < len)
-	{
-		j = i + 1;
-		while (j < len)
-		{	
-			if (tab[j] < tab[i])
-			{
-				temp = arr[j];
-				arr[j] = arr[i];
-				arr[i] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
 char	*rra(int **tab, int len)
 {
 	rot_rev(*tab, len);

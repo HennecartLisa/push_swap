@@ -12,7 +12,7 @@
 
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
-C_FILES = main.c checker.c instructions.c push_swap.c
+C_FILES = main.c checker.c instructions.c push_swap.c init.c
 
 all: $(NAME) 
 

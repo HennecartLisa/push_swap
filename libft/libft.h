@@ -117,6 +117,10 @@ void				*ft_memaset(size_t size, char c);
 void				ft_putstrdel(char *s);
 
 /*
+ * Bonus
+ */
+size_t				ft_len(int *tab);
+/*
 ** is_on_off.c
 */
 

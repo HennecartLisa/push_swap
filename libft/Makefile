@@ -89,6 +89,7 @@ SRC = ft_atoi.c\
 	  ft_putmultstr.c\
 	  ft_memaset.c\
 	  ft_putstrdel.c\
+	  ft_len.c
 
 OBJ = ft_atoi.o\
 	  ft_memcmp.o\
@@ -167,6 +168,7 @@ OBJ = ft_atoi.o\
 	  ft_putmultstr.o\
 	  ft_memaset.o\
 	  ft_putstrdel.o\
+	  ft_len.o
 
 all : $(NAME)
 

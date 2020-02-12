@@ -9,16 +9,7 @@
 /*   Updated: 2020/02/03 15:57:23 by lhenneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int		len(int *tab)
-{
-	int		i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
-}
+#include "push_swap.h"
 
 int		swap(int *tab, int len)
 {

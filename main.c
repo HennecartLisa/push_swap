@@ -12,73 +12,16 @@
 
 #include "push_swap.h"
 
-int		*ft_nbrcpy(int *dst, int *src, size_t n)
+int 	is_ord(t_pile p)
 {
-	size_t	i;
+	int 	ord;
+	size_t 	i;
 
-	i = 0;
-	while (i < n)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
-
-/*
- * 1 if digit
- * 0 if not
- */
-int		ft_is_number(char *n)
-{
-	int		i;
-
-	i = 0;
-	while (n[i] != '\0' && ft_isdigit(n[i]))
-		i++;
-	if (n[i] == '\0')
-		return (1);
-	return (0);
-}
-
-int		ft_isin(int *a, int n, int i)
-{
-	while (i > 0)
-	{
-		i--;
-		if (a[i] == n)
-			return (1);
-	}
-	return (0);
-}
-
-int		ft_read(int argc, char *argv[], t_pile a)
-{
-	int		i;
-	int		error;
-	int		nb;
-
+	ord = 1;
 	i = 1;
-	error = 0;
-	while (!error && i < argc)
-	{
-		nb = ft_atoi(argv[i]);
-		if (ft_is_number(argv[i]))
-			ft_isin(a.tab, nb, i ) ? (error = 1) : (a.tab[i - 1] = nb);
-		else
-			error = 1;
-		i++;
-	}
-	if (error)
-		return (1);
-
-	return (0);
-}
-
-int error(void)
-{
-	ft_putendl("Error");
-	return (1);
+	while (ord && i < p.len)
+		(p.tab[i - 1] < p.tab[i]) ? (i++) : (ord--);
+	return (ord);
 }
 
 int		main(int argc, char *argv[])
@@ -90,22 +33,17 @@ int		main(int argc, char *argv[])
 	i = 0;
 	if (argc < 2)
 		return (error());
-	a.tab = ft_memalloc(argc * sizeof(int));
-	if (ft_read(argc, argv, a) == 1)
-		return (error());
-	b.tab = ft_memalloc(argc * sizeof(int));
-	a.len = len(a.tab);
-	/*
-	b.tab = ft_nbrcpy(b.tab, a.tab, argc - 1);
-	ft_putendl("Tris a bulle ");
-	tris_bulle(a.tab, b.tab, a.len);
+	init_stack(&a, argc, argv);
+	init_stack(&b, argc, NULL);
+	if (is_ord(a))
+		ft_putendl("is ord");
 	i = 0;
 	while (i < argc - 1)
 	{
-		ft_putnbr(b.tab[i]);
+		ft_putnbr(a.tab[i]);
 		ft_putendl(" ");
 		i++;
 	}
-	*/
+	
 	return (0);
 }
